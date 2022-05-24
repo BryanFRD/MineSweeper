@@ -13,7 +13,6 @@ n = bombe marqué
 h = vide marqué
 0-8 = affiché
 */
-
 char[,] gameArray;
 
 bool isPlaying = false;
@@ -91,10 +90,15 @@ void AskPlayerGameSize(){
                     AskPlayerGameSize();
                     return;
                 }
-            } catch {}
+            } catch {
+                Console.WriteLine("Erreur lors de la récupération de la taille de jeu");
+            }
+        } else {
+            Console.WriteLine("Vous ne devez avoir que 3 valeurs");
         }
+    } else {
+        Console.WriteLine("Vous devez saisir 3 valeurs au minimum");
     }
-    Console.WriteLine("Erreur lors de la récupération de la taille de jeu");
     AskPlayerGameSize();
 }
 
